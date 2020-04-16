@@ -28,7 +28,7 @@ public interface UserDao {
     )
     void createTable();
 
-    @SqlUpdate("INSERT INTO user VALUES (NULL, :username, :password, :name, :email, :gender, :dob, :enabled)")
+    @SqlUpdate("INSERT INTO user VALUES (:id, :username, :password, :name, :email, :gender, :dob, :enabled)")
     @GetGeneratedKeys
     Long insert(@BindBean User user);
 
